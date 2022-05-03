@@ -8,7 +8,7 @@ interface foodDataProps {
 
 export const DetailedView = () => {
   const { id } = useParams();
-  const [data, setData] = useState<foodDataProps | {}>({ title: '' });
+  const [data, setData] = useState<foodDataProps | null>(null);
 
   useEffect(() => {
     console.log(data);
@@ -33,7 +33,7 @@ export const DetailedView = () => {
   return (
     <>
       <div>ID IS: {id}</div>
-      {/* <h1>{data.title}</h1> */}
+      <h1>{data?.title}</h1>
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </>
   );
